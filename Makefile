@@ -11,6 +11,7 @@ REQUIREMENTS = requirements.txt
 REQUIREMENTS_DEV = requirements.dev.txt
 REQUIREMENTS_IN = requirements.in
 PROJECT_NAME = project
+PRE_COMMIT = pre-commit
 
 # Commands
 RUNSERVER = $(DJANGO_MANAGE) runserver
@@ -19,6 +20,7 @@ MAKEMIGRATIONS = $(DJANGO_MANAGE) makemigrations
 COLLECTSTATIC = $(DJANGO_MANAGE) collectstatic
 CREATESUPERUSER = $(DJANGO_MANAGE) createsuperuser
 STARTPROJECT = $(DJANGO_ADMIN) startproject $(PROJECT_NAME) .
+PRE_COMMIT_RUN = $(PRE_COMMIT) run --all-files
 TEST = $(DJANGO_MANAGE) test
 FLAKE8 = flake8
 
@@ -47,6 +49,7 @@ help:
 	@echo "  clean               Remove Python cache files"
 	@echo "  venv                Set up a Python virtual environment"
 	@echo "  project             Start a new Django project"
+	@echo "  pre-commit          Run pre-commit hooks on all files"
 	@echo "  start               Initialize the virtual environment, install dependencies, and start the development server"
 
 runserver:
@@ -93,6 +96,9 @@ venv:
 
 project:
 	$(STARTPROJECT)
+
+pre-commit:
+	$(PRE_COMMIT_RUN)
 
 start: venv install project
 	$(RUNSERVER)
