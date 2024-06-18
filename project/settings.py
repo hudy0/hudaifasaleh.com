@@ -78,6 +78,14 @@ DATABASES = {
 # =========================================================================================
 #                          Password validation And Authentication
 # =========================================================================================
+AUTH_USER_MODEL = "accounts.User"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_UNIQUE_EMAIL = True
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
