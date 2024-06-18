@@ -66,9 +66,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project.wsgi.application"
 
-# Database
+# =========================================================================================
+#                          Database
+# =========================================================================================
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -112,23 +113,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
+# =========================================================================================
+#                          Internationalization
+# =========================================================================================
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# =========================================================================================
+#                          Static files (CSS, JavaScript, Images)
+# =========================================================================================
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
-# Default primary key field type
+# =========================================================================================
+#                          Default primary key field type
+# =========================================================================================
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
