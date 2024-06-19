@@ -7,5 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
+    ACCOUNT_DEFAULT_HTTP_PROTOCOL=(str, "https"),
 )
 env.read_env(str(BASE_DIR / "project/.env"))
