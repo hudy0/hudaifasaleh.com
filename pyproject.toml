@@ -9,36 +9,15 @@ omit = [
 show_missing = true
 skip_covered = true
 
-[tool.isort]
-profile = "black"
-src_paths = ["django_blog"]
-
 
 [tool.pytest.ini_options]
 addopts = "--nomigrations --disable-socket"
 DJANGO_SETTINGS_MODULE = "project.testing_settings"
 filterwarnings = [
     "error",
-    "ignore:.*The default scheme will be changed.*:PendingDeprecationWarning",
 ]
 testpaths = [
     "django_blog",
 ]
 
-[tool.black]
-line-length = 110
-target-version = ['py312']
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
+python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
