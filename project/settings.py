@@ -121,7 +121,7 @@ TEMPLATES = [
 ]
 
 """
-Third party apps 
+Third party apps and django apps
 """
 DJANGO_APPS = [
     "django.contrib.admin",
