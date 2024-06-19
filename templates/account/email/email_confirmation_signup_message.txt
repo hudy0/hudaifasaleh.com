@@ -1,0 +1,9 @@
+Hello!
+Thank you for signing-up with DjangoBlog!
+
+To confirm your account, you need to verify your email address.
+please follow this link to complete signup go to {{ activate_url }}
+I hope you have a great time using DjangoBlog.
+
+Regards,
+DjangoBlog Team ❤
