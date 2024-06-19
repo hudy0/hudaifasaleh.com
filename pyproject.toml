@@ -9,6 +9,11 @@ omit = [
 show_missing = true
 skip_covered = true
 
+[tool.isort]
+profile = "black"
+src_paths = ["django_blog"]
+
+
 
 [tool.pytest.ini_options]
 addopts = "--nomigrations --disable-socket"
