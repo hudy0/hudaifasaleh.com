@@ -74,8 +74,9 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 SITE_ID = 1
 AUTH_USER_MODEL = "accounts.User"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-LOGIN_REDIRECT_URL = "home"
+EMAIL_BACKEND = env.str("EMAIL_BACKEND")
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = [
     # Needed to log in by username in Django admin, regardless of `allauth`
