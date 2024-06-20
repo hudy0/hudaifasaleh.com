@@ -102,3 +102,10 @@ pre-commit:
 
 start: venv install project
 	$(RUNSERVER)
+
+fast_coverage:
+	@echo "Running fast coverage check"
+	@pytest --cov=django_blog -n 4 --dist loadfile -q
+
+coverage:
+	pytest --cov=django_blog --migrations -n 2 --dist loadfile

@@ -2,9 +2,8 @@ import factory
 
 
 class UserFactory(factory.django.DjangoModelFactory):
-    """
-    The factory produce a valid instance.
-    """
-
     class Meta:
         model = "accounts.User"
+
+    email = factory.Sequence(lambda n: f"user_{n}@testing.com")
+    username = factory.Sequence(lambda n: f"user_{n}")

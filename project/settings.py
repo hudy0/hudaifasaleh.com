@@ -19,7 +19,6 @@ DJANGO_APPS = [
 ]
 LOCAL_APPS = [
     "django_blog.accounts",
-    "django_blog.home",
     "django_blog.core",
 ]
 THIRD_PARTY_APPS = [
