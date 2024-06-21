@@ -34,7 +34,8 @@ jobs:
         run: |
           # Graphviz support
           # python3-dev graphviz libgraphviz-dev
-          sudo apt install python3-dev graphviz libgraphviz-dev
+          sudo apt install \
+          python3-dev graphviz libgraphviz-dev
 
       - name: Test It
         run: make coverage
