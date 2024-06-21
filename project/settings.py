@@ -141,3 +141,12 @@ TEMPLATES = [
 Miscellaneous 
 """
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+GRAPH_MODELS = {
+    "app_labels": [
+        "accounts",
+        "core",
+    ],
+    "rankdir": "BT",
+    "output": "models.png",
+}

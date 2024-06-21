@@ -1,2 +1,6 @@
 pip-tools==7.4.1
 pre-commit==3.7.1
+pygraphviz==1.13
+
+# pydot==2.0.0
+
