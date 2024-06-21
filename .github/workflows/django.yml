@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SECRET_KEY: "a secret-key for everybody"
+      DJANGO_ADMIN_URL: 'test-admin-url'
       ALLOWED_HOSTS: "*"
 
     steps:
