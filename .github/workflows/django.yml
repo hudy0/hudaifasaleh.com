@@ -9,6 +9,7 @@ jobs:
     name: Run Jobs
     runs-on: ubuntu-latest
     env:
+      SECRET_KEY: "a secret-key for everybody"
       ALLOWED_HOSTS: "*"
 
     steps:
