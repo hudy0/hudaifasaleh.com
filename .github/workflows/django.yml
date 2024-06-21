@@ -33,11 +33,8 @@ jobs:
       - name: Install OS packages
         run: |
           # Graphviz support
-          # python3-dev graphviz libgraphviz-dev
-          pip install --config-settings="--global-option=build_ext" \
-          --config-settings="--global-option=-I$(brew --prefix graphviz)/include/" \
-          --config-settings="--global-option=-L$(brew --prefix graphviz)/lib/" \
-          pygraphviz
+          # python3-dev pydot
+          sudo apt install python3-dev pydot -y
 
       - name: Test It
         run: make coverage
