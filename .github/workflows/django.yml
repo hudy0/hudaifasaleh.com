@@ -30,6 +30,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt -r requirements.dev.txt
 
+      - name: Install OS packages
+        run: |
+          # Graphviz support
+          # python3-dev graphviz libgraphviz-dev
+          sudo apt install python3-dev graphviz libgraphviz-dev
+
       - name: Test It
         run: make coverage
 
