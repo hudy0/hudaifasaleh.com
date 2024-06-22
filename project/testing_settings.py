@@ -9,3 +9,12 @@ DATABASES = {
         "NAME": ":memory:",
     }
 }
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
+
+# This eliminates the warning about a missing staticfiles directory.
+WHITENOISE_AUTOREFRESH = True

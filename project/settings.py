@@ -9,6 +9,7 @@ from project.envs import BASE_DIR, env
 Third party apps and django apps
 """
 DJANGO_APPS = [
+    "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -98,6 +99,7 @@ Django middleware
 """
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -115,6 +117,11 @@ WSGI_APPLICATION = "project.wsgi.application"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
 # STATICFILES_DIRS = [BASE_DIR / "static"]
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 """
 Template settings

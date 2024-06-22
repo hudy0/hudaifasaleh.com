@@ -8,6 +8,8 @@ asgiref==3.8.1
     # via django
 black==24.4.2
     # via -r requirements.in
+brotli==1.1.0
+    # via whitenoise
 click==8.1.7
     # via black
 coverage[toml]==7.5.3
@@ -79,3 +81,5 @@ tokenize-rt==5.2.0
     # via
     #   django-upgrade
     #   pyupgrade
+whitenoise[brotli]==6.7.0
+    # via -r requirements.in
