@@ -63,6 +63,10 @@ db.sqlite3-journal
 staticfiles
 models.png
 
+# JavaScript:
+node_modules
+static/site.css
+
 # Flask stuff:
 instance/
 .webassets-cache
