@@ -23,6 +23,7 @@ LOCAL_APPS = [
     "django_blog.core",
 ]
 THIRD_PARTY_APPS = [
+    "waffle",
     "django_extensions",
     "allauth",
     "allauth.account",
@@ -107,6 +108,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "waffle.middleware.WaffleMiddleware",
 ]
 
 """
@@ -157,3 +159,6 @@ GRAPH_MODELS = {
     "rankdir": "BT",
     "output": "models.png",
 }
+
+# django-waffle
+WAFFLE_CREATE_MISSING_FLAGS = True
