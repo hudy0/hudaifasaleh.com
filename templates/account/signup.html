@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load waffle_tags %}
+{% block content %}
+    <h1 class="text-xl my-4">SignUp</h1>
+    {% flag signup_flag %}
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label>
+                    <input class="border mb-4" name="email" type="email">
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input class="border mb-4" name="password1" type="password">
+                </label>
+            </div>
+
+            <div>
+                <input class="p-2 bg-lime-700 text-white" type="submit" value="Sign Up7">
+            </div>
+        </form>
+        {% else %}
+        <p>Sorry, we are not accepting new sign-ups right now.</p>
+    {% endflag %}
+{% endblock content %}
