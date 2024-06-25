@@ -9,5 +9,12 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 def terms(request: HttpRequest) -> HttpResponse:
+    """The terms of service page of the application."""
     context = {}
     return render(request, "core/terms.html", context)
+
+
+def privacy(request: HttpRequest) -> HttpResponse:
+    """The privacy of service page of the application."""
+    context = {}
+    return render(request, "core/privacy.html", context)
