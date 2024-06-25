@@ -1,6 +1,6 @@
 from django.urls import path
 
-from django_blog.core.views import index, terms, privacy
+from django_blog.core.views import index, privacy, terms
 
 app_name = "core"
 urlpatterns = [
