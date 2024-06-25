@@ -6,8 +6,15 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
+from django_blog.core.views import index, privacy, terms
+
 urlpatterns = [
+    # django-allauth main url
     path("accounts/", include("allauth.urls")),
+    # django admin url
     path(settings.DJANGO_ADMIN_URL, admin.site.urls),
-    path("core/", include("django_blog.core.urls", namespace="core")),
+    # core app urls path
+    path("", view=index, name="index"),
+    path("terms/", view=terms, name="terms"),
+    path("privacy/", view=privacy, name="privacy"),
 ]
