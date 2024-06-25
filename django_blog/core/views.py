@@ -3,7 +3,11 @@ from django.shortcuts import render
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    """
-    The entry point of the application.
-    """
-    return render(request, "core/index.html", {})
+    """The entry point of the application."""
+    context = {}
+    return render(request, "core/index.html", context)
+
+
+def terms(request: HttpRequest) -> HttpResponse:
+    context = {}
+    return render(request, "core/terms.html", context)
