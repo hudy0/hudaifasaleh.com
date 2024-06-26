@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="max-w-xl mb-6 mx-auto">
+        <p class="mb-3">Hello!</p>
+        <p class="mb-3">Welcome to DjangoBlog.</p>
+        <p class="mb-8">Hudaifa,<br>DjangoBlog creator</p>
+        <a href="{% url "account_signup" %}" class="p-2 bg-lime-800 text-white rounded-lg">Sign Up</a>
+    </div>
+{% endblock %}
