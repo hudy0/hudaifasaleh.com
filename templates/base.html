@@ -8,7 +8,16 @@
     <title>{% block title %}{% endblock title %} &ndash; DjangoBlog</title>
 </head>
 <body>
-<div class="container mx-auto">
+<div class="w-full bg-lime-700 text-white">
+    <div class="container mx-auto flex items-center">
+        <a href="{% url 'index' %}" class="hover:brightness-110">
+            <div class="bg-lime-700 px-2 py-4 text-xl font-black tracking-wider">
+                <span class="text-orange-300">Django</span><span>Blog</span>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="container mx-auto pt-12">
     {% block content %} {% endblock content %}
 </div>
 </body>
