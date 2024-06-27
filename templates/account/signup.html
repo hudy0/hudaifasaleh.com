@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% load waffle_tags %}
 {% block content %}
-    <h1 class="text-xl my-4">SignUp</h1>
+    <h1 class="text-xl my-4 max-w-lg flex flex-row mx-auto">SignUp</h1>
     {% flag signup_flag %}
         <form method="post">
             {% csrf_token %}
             <div>
                 <label>
-                    <input class="border mb-4" name="email" type="email">
+                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg" name="email"
+                           type="email">
                 </label>
             </div>
 
             <div>
                 <label>
-                    <input class="border mb-4" name="password1" type="password">
+                    <input class="border max-w-lg flex flex-row mx-auto mb-8 w-full py-2 rounded-lg" name="password1"
+                           type="password">
                 </label>
             </div>
 
             <div>
-                <input class="p-2 bg-lime-700 text-white rounded-lg" type="submit" value="Sign Up">
+                <input class="py-2 bg-cyan-800 text-white rounded-lg max-w-lg flex flex-row mx-auto mb-10 w-full"
+                       type="submit" value="Sign Up">
             </div>
         </form>
-        <p class="text-xs text-muted mt-6 leading-snug">
+        <p class="text-xs text-muted mt-6 leading-snug max-w-lg flex flex-row mx-auto">
             By continuing,
             you agree to DjangoBlog&rsquo;s
             <a href="{% url "terms" %}" class="underline" target="_blank">Terms of Service</a> and

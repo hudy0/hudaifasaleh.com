@@ -8,17 +8,44 @@
     <title>{% block title %}{% endblock title %} &ndash; DjangoBlog</title>
 </head>
 <body>
-<div class="w-full bg-lime-700 text-white">
+<div class="w-full bg-cyan-800 text-white">
     <div class="container mx-auto flex items-center">
         <a href="{% url 'index' %}" class="hover:brightness-110">
-            <div class="bg-lime-700 px-2 py-4 text-xl font-black tracking-wider">
-                <span class="text-orange-300">Django</span><span>Blog</span>
+            <div class="bg-cyan-800 px-2 py-4 text-xl font-black tracking-wider">
+                <span>Django</span><span class="text-orange-400">Blog</span>
             </div>
         </a>
     </div>
 </div>
-<div class="container mx-auto pt-12">
+
+{#<div class="container mx-auto pt-12">#}
+{#    {% block content %} {% endblock content %}#}
+{#</div>#}
+<main class="container mx-auto pt-12 px-4 sm:px-0 grow">
+    {% if messages %}
+        <ul class="max-w-xl flex flex-row mx-auto mb-10 w-full">
+            {% for message in messages %}
+                <li class="bg-cyan-200 border border-yellow-300 text-lime-900 p-4 rounded-lg shadow-sm">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     {% block content %} {% endblock content %}
-</div>
+</main>
+
+<footer class="w-full mt-8 mx-auto text-center text-sm bg-cyan-800 text-white flex flex-col sm:flex-row justify-center">
+    <span class="py-3 px-1">&copy; {% now "Y" %} Django<span class="text-orange-400">Blog</span></span>
+    {#        <a href="{% url "about" %}" class="py-3 px-2 bg-lime-800 hover:brightness-110">About</a>#}
+    <a href="{% url "privacy" %}" class="py-3 px-2 bg-cyan-800 hover:brightness-110">Privacy</a>
+    <a href="{% url "terms" %}" class="py-3 px-2 bg-cyan-800 hover:brightness-110">Terms</a>
+    {#        <a href="{% url "faq" %}" class="py-3 px-2 bg-lime-800 hover:brightness-110">FAQ</a>#}
+    {% if user.is_authenticated %}
+        <form class="inline py-3 px-2 bg-cyan-800 hover:brightness-110" method="POST"
+              action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button class="" type="submit">Log Out</button>
+        </form>
+    {% endif %}
+</footer>
 </body>
 </html>
